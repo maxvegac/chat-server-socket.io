@@ -16,7 +16,7 @@ const io = new Server(httpServer, {  cors: {
   }});
 
 
-io.on("connection", (socket: Client) => {
+io.on("connection", async (socket: Client) => {
   socket.onAny((eventName: string, data: any) => {
     const eventNameCapitalized = `${eventName.charAt(0).toUpperCase()}${eventName.slice(1)}`
     if(eventNameCapitalized in commands)  {

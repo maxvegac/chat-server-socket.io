@@ -12,7 +12,7 @@ export default class Quit extends Command {
          super(eventName, description, context.client, context.server, context.logger)
     }
     process(data: IncommingEvent) {
-        return {"data": data}
+        this.client.disconnect()
     }
 }
 
